@@ -40,4 +40,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function resort(){
+        return $this->hasOne(Resort::class);
+    }
+
+    public function resortImage(){
+        return $this->hasMany(ResortImage::class);
+    }
+
+    public function location(){
+        return $this->hasMany(Location::class);
+    }
 }

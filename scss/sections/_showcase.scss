@@ -1,0 +1,6 @@
+@use '../custom' as *;
+@use '../components/mixin' as *;
+
+.bg-gradient{
+    @include gradient;
+}

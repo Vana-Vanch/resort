@@ -1,0 +1,6 @@
+@use '../custom' as *;
+
+@mixin gradient {
+    background-color: $dark-override; 
+    background-image: linear-gradient($dark-override, $light-override);
+}
