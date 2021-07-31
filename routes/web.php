@@ -3,9 +3,11 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ResortController;
+use App\Http\Controllers\ResortDetailController;
 use App\Http\Controllers\ResortImagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +46,13 @@ Route::post('/addresort', [ResortController::class, 'store'])->name('addresort.s
 Route::get('/addimages', [ ResortImagesController::class, 'index' ])->name('images');
 Route::post('/addimages', [ ResortImagesController::class, 'store' ])->name('images.store');
 
-//
+//SetLocation
 Route::get('/setlocation', [LocationController::class,'index'])->name('location');
 Route::post('/setlocation', [LocationController::class, 'store'])->name('location.store');
+
+//ResortDetail
+Route::get('/resort/{id}/detail', [ResortDetailController::class, 'show'])->name('detail');
+
+//Bookings
+Route::get('/bookings/{resort}', [BookingsController::class, 'index'])->name('bookings');
+Route::post('/bookings', [BookingsController::class, 'store'])->name('bookings.store');

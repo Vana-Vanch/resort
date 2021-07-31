@@ -65,6 +65,29 @@ function initMap() {
 }
 </script>
 {{-- End Resort --}}
+{{-- Display Resort Loc--}}
+<script>
+let map;
+var lat = document.getElementById('location0').value;
+var lng = document.getElementById('location1').value;
+        console.log("This is lattitude"+lat);
+        console.log("This is longitude"+lng);
+        var newLat = parseFloat(lat);
+        var newLng = parseFloat(lng);
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("resmap"), {
+    center: { lat: newLat, lng: newLng},
+    zoom: 13,
+
+ 
+  });
+  var marker = new google.maps.Marker({
+      position: {lat: newLat, lng: newLng},
+      map:map
+    });
+}
+</script>
 </body>
 </html>
   

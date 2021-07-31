@@ -27,14 +27,14 @@
                 @foreach ($resorts as $resort )
                     
            
-                <div class="col-md-4 ">
-                        <div class="card w-75 items-center m-auto border border-light border-1 rounded-3 p-2 bg-gradient thuziak">
+                <div class="col-md-4 " >
+                        <div class="card w-75 items-center m-auto border border-light border-1 rounded-3 p-2 bg-gradient thuziak " style="height: 400px">
 
                              <img src="{{ asset('images/resorts/'.$resort->display) }}" class="card-img-top img-fluid mt-2 rounded-2" alt="">
                             <div class="card-body">
                                 <div class="card-title"><h3>{{$resort->title}}</h3></div>
                                     <p class="card-text">  &#8377 {{ $resort->price }}</p>
-                                    <a href="" class="btn btn-primary">Detail</a>
+                                    <a href="{{ route('detail', $resort->id) }}" class="btn btn-primary">Detail</a>
                             </div>
                         </div>
                     </div>
