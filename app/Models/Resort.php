@@ -18,9 +18,7 @@ class Resort extends Model
     ];
 
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
+  
 
     // public function resortImage(){
     //     return $this->hasMany(ResortImage::class);

@@ -8,8 +8,11 @@ use App\Models\Location;
 
 class LocationController extends Controller
 {
-    public function index(){
-        return view('pages.setlocation');
+    public function index($id){
+        $passId = $id;
+        return view('pages.setlocation', [
+            'passId' => $passId
+        ]);
     }
 
     public function store(Location $location,Request $request){
@@ -21,10 +24,10 @@ class LocationController extends Controller
         $locations = array();
         array_push($locations, $request->lat, $request->lng);
         $location->create([
-            'user_id' => $request->user()->id,
+            'resort_id' => $request->passId,
             'location' => $locations
         ]);
-        return redirect('/');
+        return redirect()->route('admin');
 
     }
 }

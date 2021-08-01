@@ -6,10 +6,10 @@
                 <div>
                 <p>
                      <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, atque!</h1>
-                     Resort online a book theih ani ta. Resort i nei a i in register duh anih chuan a hnuaih hian hmet keuh rawh
+                     aklsjd kla akls iw iiw wi wi aklsjdkl ja wijdisajkjiwjqpwoieqp i io iapsd asod iasoi ao lsk; aksdja jkjkjaksdjk 
                      
                 </p>
-                <a href="{{ route('addresort') }}" class="btn btn-success">Add MyResort</a>
+             
                 </div>
                 <img src="{{ asset('images/web/Summer landscape_Two Color.png') }}" class="img-fluid d-none d-lg-block" alt="">
             </div>
@@ -17,7 +17,7 @@
     </div>
 <section>
     <div class="container text-center my-5 thuziak">
-        <h3>Take a look around</h3>
+        <h3>Available Resorts</h3>
     </div>
 </section>
 

@@ -66,7 +66,7 @@ function initMap() {
 </script>
 {{-- End Resort --}}
 {{-- Display Resort Loc--}}
-<script>
+{{-- <script>
 let map;
 var lat = document.getElementById('location0').value;
 var lng = document.getElementById('location1').value;
@@ -87,7 +87,7 @@ function initMap() {
       map:map
     });
 }
-</script>
+</script> --}}
 </body>
 </html>
   

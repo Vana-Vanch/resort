@@ -9,7 +9,7 @@ class Location extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
+        'resort_id',
         'location'
     ];
     protected $casts = [
@@ -18,11 +18,7 @@ class Location extends Model
        
         ];
 
-     public function resortloc(){
-         return $this->belongsTo(Resort::class);
-     }   
+ 
 
-     public function user(){
-         return $this->belongsTo(User::class);
-     }
+
 }

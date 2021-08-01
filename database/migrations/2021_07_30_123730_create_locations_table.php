@@ -15,7 +15,7 @@ class CreateLocationsTable extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id('location_id');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('resort_id')->constrained()->onDelete('cascade');
             $table->json('location');
             $table->timestamps();
         });

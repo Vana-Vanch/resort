@@ -12,6 +12,7 @@
       <form method="post" action="{{ route('images.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
+
             <input type="file" name="images[]" multiple class="form-control" accept="image/*">
             @if ($errors->has('files'))
               @foreach ($errors->get('files') as $error)
@@ -21,7 +22,7 @@
               @endforeach
             @endif
         </div>
-  
+        <input type="text" value="{{ $passId }}" name="passId" readonly>
         <div class="form-group my-3 text-center">
           <button type="submit" class="btn btn-success">Save</button>
         </div>

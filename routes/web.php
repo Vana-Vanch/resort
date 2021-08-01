@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -43,11 +44,11 @@ Route::get('/addresort', [ResortController::class, 'index'])->name('addresort');
 Route::post('/addresort', [ResortController::class, 'store'])->name('addresort.store');
 
 //ResortImages
-Route::get('/addimages', [ ResortImagesController::class, 'index' ])->name('images');
+Route::get('/addimages/{id}', [ ResortImagesController::class, 'index' ])->name('images');
 Route::post('/addimages', [ ResortImagesController::class, 'store' ])->name('images.store');
 
 //SetLocation
-Route::get('/setlocation', [LocationController::class,'index'])->name('location');
+Route::get('/setlocation/{id}', [LocationController::class,'index'])->name('location');
 Route::post('/setlocation', [LocationController::class, 'store'])->name('location.store');
 
 //ResortDetail
@@ -56,3 +57,7 @@ Route::get('/resort/{id}/detail', [ResortDetailController::class, 'show'])->name
 //Bookings
 Route::get('/bookings/{resort}', [BookingsController::class, 'index'])->name('bookings');
 Route::post('/bookings', [BookingsController::class, 'store'])->name('bookings.store');
+
+
+//admin
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');

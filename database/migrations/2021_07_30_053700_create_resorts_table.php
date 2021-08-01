@@ -15,13 +15,13 @@ class CreateResortsTable extends Migration
     {
         Schema::create('resorts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('contact');
             $table->unsignedInteger('price');
             $table->longText('description');
             $table->timestamps();
         });
+        
     }
 
     /**

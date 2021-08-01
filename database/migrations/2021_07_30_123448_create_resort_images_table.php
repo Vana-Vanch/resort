@@ -15,7 +15,7 @@ class CreateResortImagesTable extends Migration
     {
         Schema::create('resort_images', function (Blueprint $table) {
             $table->id('image_id');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('resort_id')->constrained()->onDelete('cascade');
        
             $table->string('name')->nullable();
             $table->string('path')->nullable();

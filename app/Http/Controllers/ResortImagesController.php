@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 
 class ResortImagesController extends Controller
 {
-    public function index(){
-
-        return view('pages.imageup');
+    public function index($id){
+        $passId = $id;
+        return view('pages.imageup', [
+                'passId' => $passId
+        ]);
     }
 
     public function store(ResortImage $resortImage,Request $request)
@@ -28,13 +30,21 @@ class ResortImagesController extends Controller
                 $path = $image->storeAs('uploads', $name, 'public');
 
                 $resortImage->create([
-                    'user_id' => $request->user()->id,
+                    'resort_id' => $request->passId,
                     'name' => $name,
                     'path' => '/storage/'.$path
                   ]);
+            
+                  }
+                 
             }
-            return redirect('/setlocation');
-         }
+            $currResort = Resort::where('id', $request->passId)->get();
+            foreach($currResort as $curr){
+                $passId = $curr->id;
+            }
+            
+
+     return redirect()->route('location', $passId);
                  
 
        

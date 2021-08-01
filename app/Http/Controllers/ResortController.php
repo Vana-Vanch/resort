@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Resort;
 
 class ResortController extends Controller
 {
@@ -28,15 +29,19 @@ class ResortController extends Controller
         $newImgName = time().'-'.$request->title.'.'.$request->file->extension();
         $request->file->move(public_path('/images/resorts'), $newImgName);
         
-        auth()->user()->resort()->create([
+         Resort::create([
             'title' => $request->title,
             'contact' => $request->contact,
             'price' => $request->price,
             'description' => $request->description,
             'display' => $newImgName
         ]);
+        $currResort = Resort::where('title', $request->title)->get();
+        foreach($currResort as $curr){
+            $passId = $curr->id;
+        }
        
-        return redirect()->route('images');
+        return redirect()->route('images', $passId);
 
 
             

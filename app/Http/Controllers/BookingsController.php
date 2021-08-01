@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Resort;
 use App\Models\Booking;
+use PDF;
 
 
 class BookingsController extends Controller
@@ -33,7 +34,17 @@ class BookingsController extends Controller
             'contact' => $request->contact
         ]);
 
-        return redirect('/');
+        $data = [
+            'resortName' => $request->resortName,
+            'name' => $request->name,
+            'date' => $dateval,
+            'price' => $request->price,
+            'contact' => $request->contact
+        ];
+        $pdf = PDF::loadView('myPDF', $data);
+        $resortName = $request->resortName;
+
+        return $pdf->download($resortName.'.pdf');
         
 
 
