@@ -55,7 +55,37 @@
             </div>
           @endforeach
         </div>
+        
+    <div class="accordion accordion-light" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Reviews
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          @foreach ($reviews as $review)
+      
+          <div class="accordion-body border-bottom border-1 border-light">    <small class="text-muted">{{$review->name}} {{$review->created_at->diffForHumans() }}:
+          </small><br>{{ $review->body }}</div>
+          @endforeach
+            
+          
+          <div class="accordion-body"><form action="{{ route('review') }}" method="POST">
+            @csrf
+            <input type="text" class="form-control" name="body">
+            <input type="text" name="resortId" value="{{ $resort->id }}" readonly hidden>  
+            <div class="mt-3">
+
+              <input type="submit" class="btn btn-light" value="Comment">
+            </div>
+          </form></div>
+        </div>
+      </div>
+     
+      </div>
     </div>
+  </div>
     @include('inc.footer')
     {{-- @include('inc.footer') --}}
     <script src="{{asset('js/bootstrap.js')}}"></script>

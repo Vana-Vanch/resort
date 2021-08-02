@@ -84,11 +84,16 @@
                                     User
                                     @endif
                                 </td>
-                                  <td><form action="    " method="POST">
+                                  <td>
+                                      @if(auth()->user()->id == $user->id)
+                                      ---
+                                      @else
+                                    <form action="{{ route('user.destroy' , $user) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <input type="submit" value="Delete" >      
-                                </form></td>
+                                </form>@endif
+                              </td>
                                 </tr>
                                 @endforeach
                      

@@ -10,6 +10,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ResortController;
 use App\Http\Controllers\ResortDetailController;
 use App\Http\Controllers\ResortImagesController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,3 +64,8 @@ Route::delete('/bookings/{booking}', [BookingsController::class, 'destroy'])->na
 
 //admin
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::delete('/admin/{user}', [RegisterController::class, 'destroy'])->name('user.destroy');
+
+
+//review
+Route::post('/review', [ReviewController::class, 'store'])->name('review');
