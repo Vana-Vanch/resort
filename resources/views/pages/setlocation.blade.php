@@ -11,9 +11,9 @@
 
         </div>
         <div>
-            <input type="text" name="lat" id="lat">
-            <input type="text" name="lng" id="lng">
-            <input type="text" value="{{ $passId }}" name="passId" readonly>
+            <input type="text" name="lat" id="lat" hidden>
+            <input type="text" name="lng" id="lng" hidden>
+            <input type="text" value="{{ $passId }}" name="passId" readonly hidden>
             <div class="my-4 text-center">
                 <input type="submit" class="btn btn-light" value="Confirm">
             </div>

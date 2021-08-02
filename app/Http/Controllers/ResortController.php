@@ -42,10 +42,13 @@ class ResortController extends Controller
         }
        
         return redirect()->route('images', $passId);
-
+    }
+    public function destroy(Resort $resort){
+        $resort->delete();
+        return back();
+    }
 
             
 
         
-    }
 }

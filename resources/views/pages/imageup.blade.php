@@ -22,7 +22,7 @@
               @endforeach
             @endif
         </div>
-        <input type="text" value="{{ $passId }}" name="passId" readonly>
+        <input type="text" value="{{ $passId }}" name="passId" readonly hidden>
         <div class="form-group my-3 text-center">
           <button type="submit" class="btn btn-success">Save</button>
         </div>

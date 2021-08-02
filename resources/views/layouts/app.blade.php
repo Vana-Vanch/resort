@@ -17,10 +17,12 @@
     @include('inc.navbar')
     @yield('content')
     @include('inc.footer')
-    {{-- @include('inc.footer') --}}
+    
+    {{-- jsfiles --}}
     <script src="{{asset('js/bootstrap.js')}}"></script>
     <script src="{{asset('font/js/all.js')}}"></script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('chart.js/dist/chart.js') }}"></script>
 
     {{-- Ck editor --}}
     <script type="text/javascript">
@@ -29,10 +31,12 @@
     });
     </script>
 {{-- End Ckeditor --}}
+
 {{-- import google map api --}}
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfRbk9h54iut-MeTDJjxeTL02bNeKKSVE&callback=initMap&libraries=&v=weekly" async
 ></script>
 {{-- end google map api --}}
+
 {{-- Add resort location --}}
 <script>
 function initMap() {
@@ -64,30 +68,9 @@ function initMap() {
   });
 }
 </script>
-{{-- End Resort --}}
-{{-- Display Resort Loc--}}
-{{-- <script>
-let map;
-var lat = document.getElementById('location0').value;
-var lng = document.getElementById('location1').value;
-        console.log("This is lattitude"+lat);
-        console.log("This is longitude"+lng);
-        var newLat = parseFloat(lat);
-        var newLng = parseFloat(lng);
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("resmap"), {
-    center: { lat: newLat, lng: newLng},
-    zoom: 13,
 
- 
-  });
-  var marker = new google.maps.Marker({
-      position: {lat: newLat, lng: newLng},
-      map:map
-    });
-}
-</script> --}}
+
 </body>
 </html>
   

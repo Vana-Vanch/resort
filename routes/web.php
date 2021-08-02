@@ -42,6 +42,7 @@ Route::post('/login', [LoginController::class, 'store'])->name('login.create');
 //Resort
 Route::get('/addresort', [ResortController::class, 'index'])->name('addresort');
 Route::post('/addresort', [ResortController::class, 'store'])->name('addresort.store');
+Route::delete('/admin{resort}/', [ResortController::class, 'destroy'])->name('resort.destroy');
 
 //ResortImages
 Route::get('/addimages/{id}', [ ResortImagesController::class, 'index' ])->name('images');
@@ -57,6 +58,7 @@ Route::get('/resort/{id}/detail', [ResortDetailController::class, 'show'])->name
 //Bookings
 Route::get('/bookings/{resort}', [BookingsController::class, 'index'])->name('bookings');
 Route::post('/bookings', [BookingsController::class, 'store'])->name('bookings.store');
+Route::delete('/bookings/{booking}', [BookingsController::class, 'destroy'])->name('bookings.destroy');
 
 
 //admin

@@ -17,7 +17,7 @@ $black:    #000;
 $dark-override : #000000;
 $light-override: $gray-600;
 $button1 : $gray-300;
-
+$table-bg : #10e826;
 
 //overrided
 // $primary:       $blue !default;
@@ -30,6 +30,7 @@ $button1 : $gray-300;
 $success:       $button1;
 $dark:          $dark-override;
 $light:         $light-override;
+$secondary:     $table-bg;
 
 
 

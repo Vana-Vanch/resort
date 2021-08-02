@@ -30,7 +30,7 @@
                 <div class="col-md-4 " >
                         <div class="card w-75 items-center m-auto border border-light border-1 rounded-3 p-2 bg-gradient thuziak " style="height: 400px">
 
-                             <img src="{{ asset('images/resorts/'.$resort->display) }}" class="card-img-top img-fluid mt-2 rounded-2" alt="">
+                             <img src="{{ asset('images/resorts/'.$resort->display) }}" class="card-img-top img-fluid mt-2 rounded-2" alt="" style="height: 300px;">
                             <div class="card-body">
                                 <div class="card-title"><h3>{{$resort->title}}</h3></div>
                                     <p class="card-text">  &#8377 {{ $resort->price }}</p>

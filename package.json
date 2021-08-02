@@ -8,7 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "compile:sass":"sass --watch scss:public/css"
+        "compile:sass": "sass --watch scss:public/css"
     },
     "devDependencies": {
         "axios": "^0.21",
@@ -21,6 +21,7 @@
         "@fortawesome/fontawesome-free": "^5.15.3",
         "autoprefixer": "^10.3.1",
         "bootstrap": "^5.0.2",
+        "chart.js": "^3.5.0",
         "postcss-cli": "^8.3.1"
     }
 }

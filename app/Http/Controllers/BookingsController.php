@@ -45,8 +45,12 @@ class BookingsController extends Controller
         $resortName = $request->resortName;
 
         return $pdf->download($resortName.'.pdf');
-        
-
-
     }
+
+        public function destroy(Booking $booking){
+            $booking->delete();
+            return back();
+        }
+
+
 }
