@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Resort;
 use App\Models\Booking;
+
 use PDF;
 
 

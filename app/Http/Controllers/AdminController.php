@@ -30,17 +30,19 @@ class AdminController extends Controller
                 array_push($newNames, $names);
             }
         }
-
+        
         for($i=0;$i<count($newNames);$i++){
-            $current = $resortNames[$i];
+            $current = $newNames[$i];
             $count = 1;
-            for($j=$i+1;$j<count($newNames);$j++){
+            for($j=$i+1;$j<count($resortNames);$j++){
                 if($resortNames[$j] == $current){
                     $count++;
                 }
             }
             array_push($arrayCount,$count);
         }
+        // dd($newNames);
+    //    dd($arrayCount);
  
         return view('admin.admin')->with('names',json_encode($newNames,JSON_NUMERIC_CHECK))->with('nums',json_encode($arrayCount,JSON_NUMERIC_CHECK))->with('resorts',$resorts)->with('users', $users)->with('bookings', $bookings);
     }
